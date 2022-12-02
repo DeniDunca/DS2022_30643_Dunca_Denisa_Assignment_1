@@ -30,7 +30,7 @@ stages:
     steps:
       - task: Maven@3
         inputs:
-          mavenPomFile: '/pom.xml'
+          mavenPomFile: 'Backend/pom.xml'
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
           codeCoverageToolOption: 'JaCoCo'
@@ -45,7 +45,7 @@ stages:
       - task: Maven@3
         displayName: "Maven Test"
         inputs:
-          mavenPomFile: "pom.xml"
+          mavenPomFile: "Backend/pom.xml"
           goals: "test"
       - task: PublishTestResults@2
         displayName: "Publish test results"
